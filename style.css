@@ -1,0 +1,70 @@
+*{
+    margin :0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(53, 53, 53);
+    height: 100vh;
+
+}
+#card-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 100vh;
+    gap: 3rem;
+
+}
+.card{
+    width: 10rem;
+    height: 10rem;
+    box-shadow: 7px 7px 12px 6px rgb(46 46 46);
+
+    border-radius: 1.1rem;
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+    
+
+}
+.front{
+    width:10rem;
+    height: 10rem;
+    background: yellow;
+    position: absolute;
+    border-radius: 1.1rem;
+    backface-visibility: hidden;
+}
+.back{
+    width: 10rem;
+    height: 10rem;
+
+    border-radius: 1.1rem;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.card_selected{
+
+    transform: rotateY(180deg);
+}
+
+
+.card_matches .front {
+    background-color: greenyellow;
+}
+.card_matches .front::after{
+    content: "Matched";
+display: flex;
+align-items: center;
+justify-content: center;
+    font-size: 40px;
+    height:100%;
+    font-family: 'Balsamiq Sans';
+    color: rgb(84, 84, 255);
+    font-weight: bold;
+}
